@@ -1,0 +1,10 @@
+options:
+  domain_id:
+    type: int
+    default: 0
+    description: "This is the domain ID"
+  ip:
+    type: string
+    default: "0.0.0.0"
+    description: "This is the IP"
+

@@ -1,0 +1,7 @@
+name: vsm
+summary: vsm
+description: |
+  vsm charm
+provides:
+  dvs:
+    interface: dvs

@@ -1,0 +1,8 @@
+#!/bin/bash
+# config-changed occurs everytime a new configuration value is updated (juju set)
+
+#domain_id=$(config-get domain_id)
+#ip=$(config-get ip)
+
+#echo $domain_id > /tmp/vsm-config
+#echo $ip >> /tmp/vsm-config

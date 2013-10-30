@@ -1,0 +1,10 @@
+options:
+  vsm_domain_id:
+    type: int
+    default: 101
+    description: "This is the domain ID"
+  vsm_ip:
+    type: string
+    default: "20.1.1.100"
+    description: "This is the IP"
+

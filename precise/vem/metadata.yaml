@@ -1,0 +1,7 @@
+name: vem
+summary: vem
+description: |
+  vem charm
+requires:
+  dvs:
+    interface: dvs
