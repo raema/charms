@@ -1,7 +1,11 @@
 name: vem
 summary: vem
+subordinate: true
 description: |
   vem charm
 requires:
   dvs:
     interface: dvs
+  openstack-nova:
+    interface: juju-info
+    scope: container
