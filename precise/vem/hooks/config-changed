@@ -1,13 +1,14 @@
 #!/bin/bash
 # config-changed occurs everytime a new configuration value is updated (juju set)
 
+source hooks/common.sh
+
 hostmgmt_int=$(config-get hostmgmt_int)
 uplink_profile=$(config-get uplink_profile)
 
-export hostmgmt_int
-export uplink_profile
-source vsm-relation-data
+cat > vsm-config-data <<EOF
+export hostmgmt_int=$hostmgmt_int
+export uplink_profile="$uplink_profile"
+EOF
 
-cheetah fill --env --oext compiled templates/n1kv.conf.tmpl
-cp templates/n1kv.conf.compiled /etc/n1kv.conf
-
+update-n1kv-config

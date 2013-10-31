@@ -6,3 +6,13 @@
 # from github without installing git first.
 
 #apt-get install -y vem
+
+cat > vsm-config-data <<EOF
+export hostmgmt_int=eth1
+export uplink_profile="default"
+EOF
+
+cat > vsm-relation-data <<EOF
+export vsm_ip=10.0.0.1
+export vsm_domain_id=1
+EOF
