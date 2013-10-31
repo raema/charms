@@ -7,4 +7,11 @@ options:
     type: string
     default: "0.0.0.0"
     description: "This is the IP"
-
+  hostmgmt_int:
+    type: string
+    default: "eth0"
+    description: "management interface"
+  uplink_profile:
+    type: string
+    default: "phys eth3 profile sys-uplink"
+    description: "uplink profile"

@@ -1,13 +1,20 @@
 #!/bin/bash
 
+# relation data
 vsm_ip=$(relation-get vsm_ip)
 vsm_domain_id=$(relation-get vsm_domain_id)
+
+# config data
+#vsm_mgmt_int=$(config-get vsm_mgmt_int)
+
 
 #echo $vsm_ip > /tmp/vsm-config
 #echo $vsm_domain_id >> /tmp/vsm-config
 
-export vsm_ip
-export vsm_domain_id
+#export vsm_ip
+#export vsm_domain_id
 
-cheetah fill --env --oext compiled templates/n1kv.conf.tmpl
-cp templates/n1kv.conf.compiled /etc/n1kv.conf
+cat > vsm-relation-data <<EOF
+export vsm_ip=$vsm_ip
+export vsm_domain_id=$vsm_domain_id
+EOF

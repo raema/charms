@@ -1,8 +1,13 @@
 #!/bin/bash
 # config-changed occurs everytime a new configuration value is updated (juju set)
 
-#domain_id=$(config-get domain_id)
-#ip=$(config-get ip)
+hostmgmt_int=$(config-get hostmgmt_int)
+uplink_profile=$(config-get uplink_profile)
 
-#echo $domain_id > /tmp/vsm-config
-#echo $ip >> /tmp/vsm-config
+export hostmgmt_int
+export uplink_profile
+source vsm-relation-data
+
+cheetah fill --env --oext compiled templates/n1kv.conf.tmpl
+cp templates/n1kv.conf.compiled /etc/n1kv.conf
+
